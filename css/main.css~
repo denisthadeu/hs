@@ -83,7 +83,7 @@ body
 
 #mainmenu ul li a:hover, #mainmenu ul li.active a
 {
-	color:#FFFFFF;
+	color:#BFD7DD;
 	background-color:#D8BD80;
 	text-decoration:none;
 }
