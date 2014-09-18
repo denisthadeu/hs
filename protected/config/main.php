@@ -52,11 +52,18 @@ return array(
 		),*/
 		// uncomment the following to use a MySQL database
 		
-		'db'=>array(
+		/*'db'=>array(
 			'connectionString' => 'mysql:host=mysql.hostinger.com.br;dbname=u988326257_hs',
 			'emulatePrepare' => true,
 			'username' => 'u988326257_hs',
 			'password' => 'W17ZSAYmvpM',
+			'charset' => 'utf8',
+		),*/
+                'db'=>array(
+			'connectionString' => 'mysql:host=localhost;dbname=xatiado_3',
+			'emulatePrepare' => true,
+			'username' => 'root',
+			'password' => '',
 			'charset' => 'utf8',
 		),
 		'errorHandler'=>array(
