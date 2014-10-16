@@ -2,6 +2,7 @@
  
 class User extends CActiveRecord
 {
+    private $_identity;
     /**
      * Returns the static model of the specified AR class.
      * @param string $className active record class name.
@@ -29,11 +30,11 @@ class User extends CActiveRecord
         // will receive user inputs.
         return array(
             array('nome, login, senha, status, nivel', 'required'),
-            array('rememberMe', 'boolean'),
+            array('remember_me', 'boolean'),
             array('password', 'authenticate'),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('nome, login, senha, status, nivel, id_empresa, remember_me', 'safe', 'on'=>'search'),
+            array('nome, login, senha, status, nivel, id_empresa, remember_me, deactivated_by_id, deactivated_at, last_login', 'safe', 'on'=>'search'),
         );
     }
 
@@ -107,21 +108,21 @@ class User extends CActiveRecord
     {
         if(!$this->hasErrors())
         {
-            $this->_identity=new UserIdentity($this->username,$this->password);
+            $this->_identity=new UserIdentity($this->nome,$this->senha);
             if(!$this->_identity->authenticate())
-                $this->addError('password','Incorrect username or password.');
+                $this->addError('password','Usuário e senha incorretos.');
         }
     }
     
     /**
-    * Logs in the user using the given username and password in the model.
+    * Logs in the user using the given name and password in the model.
     * @return boolean whether login is successful
     */
     public function login()
     {
         if($this->_identity===null)
         {
-            $this->_identity=new UserIdentity($this->username,$this->password);
+            $this->_identity=new UserIdentity($this->nome,$this->senha);
             $this->_identity->authenticate();
         }
         if($this->_identity->errorCode===UserIdentity::ERROR_NONE)
@@ -132,5 +133,64 @@ class User extends CActiveRecord
         }
         else
             return false;
+    }
+    
+    public function preparePasswordChange($newPassword) {
+    	$this->password = self::passwordHash($newPassword);
+    	$this->password_change_token = null;
+        $this->password_token_expiration = null;
+        $this->login_failures_account = 0;
+        $this->last_password_change = new CDbExpression('NOW()');
+    }
+    
+    public function matchToken($token) {
+    	$hasher = new PasswordHash(8, false);
+    	return $hasher->CheckPassword($token, $this->password_change_token);
+    }
+    
+    public function matchPassword($pass) {
+    	//$hasher = new PasswordHash(8, false);
+        $hasher = md5($pass);
+    	return $hasher->CheckPassword($pass, $this->password);
+    }
+    
+    public static function passwordHash($text) {
+    
+    	$hasher = new PasswordHash(8, false);
+        $hash   = $hasher->HashPassword($text);
+        if (strlen($hash) >= 20) { 
+                return $hash;
+        }
+
+        return null;	
+    
+    }
+    
+    public static function findByEmail($userEmail) {
+    	$user = User::model()->find(array('condition' => 'login = :userEmail AND status = "a"', 'params' => array(':userEmail' => $userEmail)));
+        if (!isset($user)) {
+            $user = User::model()->find(array('condition' => 'login = :userEmail', 'params' => array(':userEmail' => $userEmail)));
+        }
+        return $user;
+    }
+    
+    public function activate() {
+        $this->status = "a";
+        $this->deactivated_by_id = NULL;
+        $this->deactivated_at = NULL;
+    }
+    
+    public function deactivate() {
+        $this->status = "i";
+        $this->deactivated_by_id = Yii::app()->user->id;
+        $this->deactivated_at = new CDbExpression('NOW()');
+    }
+    
+    public function lastLoginDate() {
+        return Yii::app()->dateFormatter->formatDateTime($this->last_login,'long',null);
+    }
+    
+    public function lastLoginTime() {
+        return Yii::app()->dateFormatter->formatDateTime($this->last_login,null,'medium');
     }
 }
