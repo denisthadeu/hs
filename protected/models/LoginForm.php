@@ -36,7 +36,7 @@ class LoginForm extends CFormModel
 	public function attributeLabels()
 	{
 		return array(
-			'rememberMe'=>'Remember me next time',
+			'rememberMe'=>'Entrar automaticamente',
 		);
 	}
 
@@ -46,12 +46,23 @@ class LoginForm extends CFormModel
 	 */
 	public function authenticate($attribute,$params)
 	{
-		if(!$this->hasErrors())
-		{
-			$this->_identity=new UserIdentity($this->username,$this->password);
-			if(!$this->_identity->authenticate())
-				$this->addError('password','Incorrect username or password.');
-		}
+            if(!$this->hasErrors())
+            {
+                $this->_identity=new UserIdentity($this->username,$this->password);
+                if(!$this->_identity->authenticate()) {
+                    if($this->_identity->errorCode===UserIdentity::ERROR_INACTIVE_USER) {
+                        $this->addError('email','Usuário inativo.');
+                    }/* else if($this->_identity->errorCode===UserIdentity::ERROR_INACTIVE_DEALER) {
+                        $this->addError('email','Concessionária inativa.');
+                    } else if($this->_identity->errorCode===UserIdentity::ERROR_INACTIVE_SHOP) {
+                        $this->addError('email','Loja Multimarca inativa.');
+                    } else if($this->_identity->errorCode===UserIdentity::ERROR_INACTIVE_GROUP) {
+                        $this->addError('email','Grupo de Concessionárias inativo.');
+                    }*/ else {
+                        $this->addError('password','Email ou senha incorretos.');
+                    }
+                }		
+            }  
 	}
 
 	/**

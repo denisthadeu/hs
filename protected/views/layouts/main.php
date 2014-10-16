@@ -25,7 +25,7 @@
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
-<body>
+<body style="background-color:#FAFFFF;">
 
 <div class="container" id="page">
 
