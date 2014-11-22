@@ -2,13 +2,15 @@
 <div class="row-fluid">
 
   <div class="span6">
-		<a href="" class="logo"></a>
+    <a href="index.php">
+        <h1><b>Hs Soluções!</b></h1>
+    </a>
   </div><!--/.span6 -->
   
   <div class="span6">
     <div class="social-icons pull-right clearfix">
-        <div class="" style="text-align:right;"><img src="<?php echo $baseUrl;?>/img/icons/social/facebook.png"  alt="Facebook" /> <img src="<?php echo $baseUrl;?>/img/icons/social/twitter.png"  alt="Twitter" /> <img src="<?php echo $baseUrl;?>/img/icons/social/linkedin.png"  alt="LinkedIn" /> <img src="<?php echo $baseUrl;?>/img/icons/social/google.png"  alt="Google+" /> <img src="<?php echo $baseUrl;?>/img/icons/social/rss.png"  alt="RSS" /></div>
-        <div class="header-text" style="">TOLL FREE: (123) 456 7890</div>
+        <div class="" style="text-align:right;"><img src="<?php echo $baseUrl;?>/img/icons/social/facebook.png"  alt="Facebook" /></div>
+        <div class="header-text" style="">Telefone: (   21) 9154 8350</div>
     </div><!--/.social-icons -->
    
   </div><!--/.span6 -->
