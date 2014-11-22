@@ -373,3 +373,73 @@ Stack trace:
 REQUEST_URI=/hs/index.php
 HTTP_REFERER=http://localhost/hs/index.php
 ---
+2014/10/16 02:53:55 [error] [php] Use of undefined constant home - assumed 'home' (C:\xampp\htdocs\hs\protected\controllers\SiteController.php:31)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CController.php(286): SiteController->runAction()
+#1 C:\xampp\htdocs\yii\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#2 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): SiteController->run()
+#3 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\hs\index.php(13): CWebApplication->run()
+REQUEST_URI=/hs/index.php
+in C:\xampp\htdocs\hs\protected\controllers\SiteController.php (31)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/10/16 03:12:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index/home/index".' in C:\xampp\htdocs\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('index/home/inde...')
+#1 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\hs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/hs/index.php?r=index/home/index
+HTTP_REFERER=http://localhost/hs/index.php?r=site/login
+---
+2014/11/22 19:28:36 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\teste\protected\views\layouts\tpl_header.php:11)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): HomeController->renderInternal()
+#1 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(76): HomeController->renderFile()
+#2 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#3 C:\xampp\htdocs\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(206): CContentDecorator->run()
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(300): HomeController->endWidget()
+#6 C:\xampp\htdocs\teste\protected\views\layouts\column1.php(10): HomeController->endContent()
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): HomeController->renderInternal()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(784): HomeController->renderFile()
+#10 C:\xampp\htdocs\teste\protected\controllers\HomeController.php(30): HomeController->render()
+#11 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): HomeController->actionIndex()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(286): HomeController->runAction()
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(265): HomeController->runActionWithFilters()
+#15 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): HomeController->run()
+#16 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#17 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\teste\index.php(13): CWebApplication->run()
+REQUEST_URI=/teste/index.php?r=home/index
+in C:\xampp\htdocs\teste\protected\views\layouts\tpl_header.php (11)
+in C:\xampp\htdocs\teste\protected\views\layouts\main.php (2)
+in C:\xampp\htdocs\teste\protected\views\layouts\column1.php (10)
+2014/11/22 19:30:32 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\teste\protected\views\layouts\tpl_footer.php:99)
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): HomeController->renderInternal()
+#1 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(76): HomeController->renderFile()
+#2 C:\xampp\htdocs\yii\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#3 C:\xampp\htdocs\yii\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#4 C:\xampp\htdocs\yii\framework\web\CBaseController.php(206): CContentDecorator->run()
+#5 C:\xampp\htdocs\yii\framework\web\CBaseController.php(300): HomeController->endWidget()
+#6 C:\xampp\htdocs\teste\protected\views\layouts\column1.php(10): HomeController->endContent()
+#7 C:\xampp\htdocs\yii\framework\web\CBaseController.php(126): require()
+#8 C:\xampp\htdocs\yii\framework\web\CBaseController.php(95): HomeController->renderInternal()
+#9 C:\xampp\htdocs\yii\framework\web\CController.php(784): HomeController->renderFile()
+#10 C:\xampp\htdocs\teste\protected\controllers\HomeController.php(30): HomeController->render()
+#11 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(49): HomeController->actionIndex()
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(308): CInlineAction->runWithParams()
+#13 C:\xampp\htdocs\yii\framework\web\CController.php(286): HomeController->runAction()
+#14 C:\xampp\htdocs\yii\framework\web\CController.php(265): HomeController->runActionWithFilters()
+#15 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(282): HomeController->run()
+#16 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#17 C:\xampp\htdocs\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\teste\index.php(13): CWebApplication->run()
+REQUEST_URI=/teste/index.php?r=home/index
+in C:\xampp\htdocs\teste\protected\views\layouts\tpl_footer.php (99)
+in C:\xampp\htdocs\teste\protected\views\layouts\main.php (11)
+in C:\xampp\htdocs\teste\protected\views\layouts\column1.php (10)
