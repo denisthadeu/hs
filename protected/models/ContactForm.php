@@ -12,6 +12,7 @@ class ContactForm extends CFormModel
 	public $subject;
 	public $body;
 	public $verifyCode;
+        public $captcha;
 
 	/**
 	 * Declares the validation rules.
@@ -36,7 +37,11 @@ class ContactForm extends CFormModel
 	public function attributeLabels()
 	{
 		return array(
-			'verifyCode'=>'Verification Code',
+                    'name' => 'Nome',
+                    'email' => 'E-mail',
+                    'subject' => 'Assunto',
+                    'body' => 'Mensagem',
+                    'verifyCode'=>'Código de verificação',
 		);
 	}
 }

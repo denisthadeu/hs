@@ -9,7 +9,7 @@ $this->breadcrumbs=array(
 );
 ?>
 
-<h1>Contact Us</h1>
+<h1>Fale Conosco</h1>
 
 <?php if(Yii::app()->user->hasFlash('contact')): ?>
 
@@ -20,7 +20,7 @@ $this->breadcrumbs=array(
 <?php else: ?>
 
 <p>
-If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
+Se você tem alguma dúvida sobre o sistema, ou quer se cadastrar e começar a usar o sistema, por favor, preencha os campos do formulário e entre em contato conosco. Obrigado.
 </p>
 
 <div class="form">
@@ -33,49 +33,48 @@ If you have business inquiries or other questions, please fill out the following
 	),
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Campos com <span class="required" style="color: red">*</span> são obrigatórios.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'name'); ?>
+            <span class="span3">
+                <?php echo $form->labelEx($model,'Nome <span class="required" style="color: red">*</span>'); ?>
 		<?php echo $form->textField($model,'name'); ?>
 		<?php echo $form->error($model,'name'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'email'); ?>
+            </span>
+            <span class="span3">
+                <?php echo $form->labelEx($model,'E-mail <span class="required" style="color: red">*</span>'); ?>
 		<?php echo $form->textField($model,'email'); ?>
 		<?php echo $form->error($model,'email'); ?>
+            </span>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'subject'); ?>
-		<?php echo $form->textField($model,'subject',array('size'=>60,'maxlength'=>128)); ?>
-		<?php echo $form->error($model,'subject'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'body'); ?>
-		<?php echo $form->textArea($model,'body',array('rows'=>6, 'cols'=>50)); ?>
+            <span class="span6">
+		<?php echo $form->labelEx($model,'Mensagem <span class="required" style="color: red">*</span>'); ?>
+		<?php echo $form->textArea($model,'body',array('rows'=>6, 'cols'=>50, 'style' => 'width: 89%')); ?>
 		<?php echo $form->error($model,'body'); ?>
+            </span>
 	</div>
 
 	<?php if(CCaptcha::checkRequirements()): ?>
 	<div class="row">
+            <span class="span6">
 		<?php echo $form->labelEx($model,'verifyCode'); ?>
 		<div>
 		<?php $this->widget('CCaptcha'); ?>
 		<?php echo $form->textField($model,'verifyCode'); ?>
 		</div>
-		<div class="hint">Please enter the letters as they are shown in the image above.
-		<br/>Letters are not case-sensitive.</div>
 		<?php echo $form->error($model,'verifyCode'); ?>
+            </span>
 	</div>
 	<?php endif; ?>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton('Submit'); ?>
+            <span class="span6">
+		<?php echo CHtml::submitButton('Enviar', array('class' => 'btn btn-primary')); ?>
+            </span>
 	</div>
 
 <?php $this->endWidget(); ?>
