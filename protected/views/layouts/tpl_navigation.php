@@ -16,11 +16,11 @@
                     'encodeLabel'=>false,
                     'items'=>array(
                         // Not Logged
-                        array('label'=>'Home ', 'url'=>array('/site/index'), 'visible'=>Yii::app()->user->isGuest,'linkOptions'=>array("data-description"=>"Página Inicial")),
+                        //array('label'=>'Home ', 'url'=>array('/site/index'), 'visible'=>Yii::app()->user->isGuest,'linkOptions'=>array("data-description"=>"Página Inicial")),
                         array('label'=>'A Empresa', 'url'=>array('/site/about'), 'visible'=>Yii::app()->user->isGuest,'linkOptions'=>array("data-description"=>"Sobre Nós")),
                         array('label'=>'Fale Conosco', 'url'=>array('/site/contact'), 'visible'=>Yii::app()->user->isGuest,'linkOptions'=>array("data-description"=>"Entre em Contato")),
                         
-                        // Loggued
+                        // Login
                         array('label'=>'Styles <span class="caret"></span>', 'url'=>'#', 'visible'=>!Yii::app()->user->isGuest,'itemOptions'=>array('class'=>'dropdown','tabindex'=>"-1"),'linkOptions'=>array('class'=>'dropdown-toggle','data-toggle'=>"dropdown","data-description"=>"6 styles"), 
                         'items'=>array(
                             array('label'=>'<span class="style" style="background-color:#b88006;"></span> Style 1', 'url'=>"javascript:chooseStyle('none', 60)"),
@@ -31,11 +31,12 @@
                             array('label'=>'<span class="style" style="background-color:#f9630f;"></span> Style 6', 'url'=>"javascript:chooseStyle('style6', 60)"),
                         )),
 						
-                        array('label'=>'Features <span class="caret"></span>', 'url'=>array('/site/page', 'view'=>'columns'), 'visible'=>!Yii::app()->user->isGuest,'itemOptions'=>array('class'=>'dropdown','tabindex'=>"-1"),'linkOptions'=>array('class'=>'dropdown-toggle','data-toggle'=>"dropdown","data-description"=>"cool features"), 
+                        array('label'=>'Controle <span class="caret"></span>', 'url'=>array('/site/page', 'view'=>'columns'), 'visible'=>!Yii::app()->user->isGuest,'itemOptions'=>array('class'=>'dropdown','tabindex'=>"-1"),'linkOptions'=>array('class'=>'dropdown-toggle','data-toggle'=>"dropdown","data-description"=>"Cadastros"), 
                         'items'=>array(
-                            array('label'=>'Columns', 'url'=>array('/site/page', 'view'=>'columns')),
-                            array('label'=>'Pricing tables', 'url'=>array('/site/page', 'view'=>'pricing-tables')),
-                            array('label'=>'UI Elements', 'url'=>array('/site/page', 'view'=>'elements')),
+                            array('label'=>'Empresa', 'url'=>array('/company/index', 'view'=>'empresas')),
+                            array('label'=>'Filial', 'url'=>array('/affiliate/index', 'view'=>'filiais')),
+                            array('label'=>'Hotel', 'url'=>array('/hotel/index', 'view'=>'hoteis')),
+                            array('label'=>'Apartamento', 'url'=>array('/apartament/index', 'view'=>'apartamentos')),
                         )),
 
                         

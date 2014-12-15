@@ -46,7 +46,7 @@ class Hotel extends CActiveRecord
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
-            'affilial' => array(self::BELONGS_TO, 'Filial', 'id_filial'),
+            'affiliate' => array(self::BELONGS_TO, 'Affiliate', 'id_filial'),
             'apartment' => array(self::HAS_MANY, 'Apartment', 'apartment'),
         );
     }
@@ -59,9 +59,9 @@ class Hotel extends CActiveRecord
         return array(
 
             'id' => Yii::t('Hotel', 'hotel.id'),
-            'nome' => Yii::t('Hotel', 'hotel.nome'),
-            'cnpj' => Yii::t('Hotel', 'hotel.cnpj'),
-            'id_filial' => Yii::t('Hotel', 'hotel.id_filial'),
+            'nome' => Yii::t('Hotel', 'Nome'),
+            'cnpj' => Yii::t('Hotel', 'CNPJ'),
+            'id_filial' => Yii::t('Hotel', 'Filial'),
             'status' => Yii::t('Hotel', 'hotel.status'),
         );
     }

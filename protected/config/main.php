@@ -5,6 +5,9 @@
 
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
+
+Yii::setPathOfAlias('bootstrap', dirname(__FILE__) . '/../extensions/bootstrap');
+
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'My Web Application',
@@ -17,7 +20,7 @@ return array(
 		'application.models.*',
 		'application.components.*',
 	),
-
+        'theme' => 'bootstrap',
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
 		/*
@@ -28,6 +31,14 @@ return array(
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
 		*/
+            'gii' => array(
+            'class' => 'system.gii.GiiModule',
+            'generatorPaths' => array(
+                    'bootstrap.gii',
+                    'application.gii',
+                ),
+                'password' => 'qwe123',
+            ),
 	),
 
 	// application components

@@ -47,6 +47,7 @@ class Affiliate extends CActiveRecord
         return array(
             'company' => array(self::BELONGS_TO, 'Company', 'id_empresa'),
             'city' => array(self::BELONGS_TO, 'City', 'id_cidade'),
+            'hotel' => array(self::HAS_MANY, 'Hotel', 'id'),
         );
     }
 

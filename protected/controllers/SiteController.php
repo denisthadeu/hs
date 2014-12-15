@@ -29,7 +29,7 @@ class SiteController extends Controller
     {
         if (isset(Yii::app()->user->name)) {
             //$this->redirect("/home/index");
-            $this->redirect( array('/home/index') );
+            $this->redirect( array('/site/login') );
         } else {
             $model=new LoginForm;
 
