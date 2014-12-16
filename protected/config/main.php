@@ -58,8 +58,8 @@ return array(
                             '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
                             '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
                         ),
-		),
-		*/
+		),*/
+		
 		/*'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
 		),*/
@@ -104,6 +104,6 @@ return array(
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
-		'adminEmail'=>'suporte@hs.com.br',
+		'adminEmail'=>'denis.baptista91@gmail.com',
 	),
 );

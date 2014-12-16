@@ -14,6 +14,7 @@ function mask($val, $mask){
     return $maskared;
 }
 ?>
+<?php $this->widget('bootstrap.widgets.TbAlert', array()); ?>
 <div class="row-fluid" style="padding-bottom: 10px;">
     <div class="span9"><h1>Hotel<small>/Lista de Hotéis</small></h1></div>
     <div class="span2 offset1">
@@ -41,20 +42,40 @@ function mask($val, $mask){
 <div class="row-fluid">
     <div class="span12 center">
         <div class="row-fluid" style="background-color: #006dcc;color: white;padding-top: 5px; font-weight: bold; margin-bottom: 18px; ">
-            <div class="span3">Nome</div>
+            <div class="span4">Nome</div>
             <div class="span3">CNPJ</div>
             <div class="span3">Filial</div>
-            <div class="span3">Status</div>
+            <div class="span2">Status</div>
         </div>
         <?php 
         if(count($models) > 0){
             foreach($models as $model){
                 ?>
                 <div class="row-fluid" style="background-color: #FFF;padding-top: 5px; font-weight: bold; ">
-                    <div class="span3"><?php echo $model->nome; ?></div>
+                    <div class="span4">
+                        <div class="row-fluid">
+                            <div class="span2">
+                                <div class="btn-group">
+                                    <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-wrench icon-white"></i> <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                      <li><a href="<?php echo $this->createUrl('hotel/update',array('id'=>$model->id)); ?>"><i class="icon-pencil"></i>Editar</a></li>
+                                      <li class="divider"></li>
+                                      <?php if($model->status == "a"){ ?>
+                                      <li><a href="<?php echo $this->createUrl('hotel/inactive',array('id'=>$model->id)); ?>"><i class="icon-ban-circle"></i>Inativar</a></li>
+                                      <?php } elseif($model->status == "i") { ?>
+                                      <li><a href="<?php echo $this->createUrl('hotel/active',array('id'=>$model->id)); ?>"><i class="icon-ok-circle"></i>Ativar</a></li>
+                                      <?php } ?>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="span10">
+                                <?php echo $model->nome; ?>
+                            </div>
+                        </div>
+                    </div>
                     <div class="span3"><?php echo mask($model->cnpj,'##.###.###/####-##'); ?></div>
                     <div class="span3"><?php echo $model->affiliate->nome; ?></div>
-                    <div class="span3"><?php echo ($model->status == "a") ? "Ativo" : "Inativo"; ?></div>
+                    <div class="span2"><?php echo ($model->status == "a") ? "Ativo" : "Inativo"; ?></div>
                 </div>
                 <div class="row-fluid" style="background-color: #FFF;padding-top: 5px; font-weight: bold; "><hr></div>
                 <?php
