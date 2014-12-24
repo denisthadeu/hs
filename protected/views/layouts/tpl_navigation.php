@@ -36,7 +36,7 @@
                             array('label'=>'Empresa', 'url'=>array('/company/index', 'view'=>'empresas')),
                             array('label'=>'Filial', 'url'=>array('/affiliate/index', 'view'=>'filiais')),
                             array('label'=>'Hotel', 'url'=>array('/hotel/index', 'view'=>'hoteis')),
-                            array('label'=>'Apartamento', 'url'=>array('/apartament/index', 'view'=>'apartamentos')),
+                            array('label'=>'Apartamento', 'url'=>array('/apartment/index', 'view'=>'apartamentos')),
                         )),
 
                         
