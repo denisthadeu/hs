@@ -3224,3 +3224,201 @@ in C:\xampp\htdocs\hs\index.php (13)
 2014/12/28 20:57:32 [warning] [application] Failed to set unsafe attribute "telefone" of "Apartment".
 in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (96)
 in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 22:30:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "affiliate/index".' in C:\xampp\htdocs\hs\protected\vendor\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\hs\protected\vendor\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('affiliate/index')
+#1 C:\xampp\htdocs\hs\protected\vendor\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\hs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/hs/index.php?r=affiliate/index&view=filiais
+HTTP_REFERER=http://localhost/hs/index.php?r=apartment/create
+---
+2014/12/28 22:30:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "company/index".' in C:\xampp\htdocs\hs\protected\vendor\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\hs\protected\vendor\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('company/index')
+#1 C:\xampp\htdocs\hs\protected\vendor\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\hs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/hs/index.php?r=company/index&view=empresas
+HTTP_REFERER=http://localhost/hs/index.php?r=affiliate/index&view=filiais
+---
+2014/12/28 22:30:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "company/index".' in C:\xampp\htdocs\hs\protected\vendor\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\hs\protected\vendor\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('company/index')
+#1 C:\xampp\htdocs\hs\protected\vendor\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\hs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/hs/index.php?r=company/index&view=empresas
+HTTP_REFERER=http://localhost/hs/index.php?r=company/index&view=empresas
+---
+2014/12/28 22:30:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "company/index".' in C:\xampp\htdocs\hs\protected\vendor\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\hs\protected\vendor\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('company/index')
+#1 C:\xampp\htdocs\hs\protected\vendor\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\hs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/hs/index.php?r=company/index&view=empresas
+HTTP_REFERER=http://localhost/hs/index.php?r=company/index&view=empresas
+---
+2014/12/28 22:30:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "affiliate/index".' in C:\xampp\htdocs\hs\protected\vendor\yii\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\hs\protected\vendor\yii\framework\web\CWebApplication.php(141): CWebApplication->runController('affiliate/index')
+#1 C:\xampp\htdocs\hs\protected\vendor\yii\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\hs\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/hs/index.php?r=affiliate/index&view=filiais
+HTTP_REFERER=http://localhost/hs/index.php?r=hotel/index&view=hoteis
+---
+2014/12/28 22:30:26 [warning] [application] Failed to set unsafe attribute "id_hotel" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 22:30:26 [warning] [application] Failed to set unsafe attribute "telefone" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 22:30:31 [warning] [application] Failed to set unsafe attribute "id_hotel" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 22:30:31 [warning] [application] Failed to set unsafe attribute "telefone" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 22:30:39 [warning] [application] Failed to set unsafe attribute "id_hotel" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 22:30:39 [warning] [application] Failed to set unsafe attribute "telefone" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 22:30:44 [warning] [application] Failed to set unsafe attribute "id_hotel" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 22:30:44 [warning] [application] Failed to set unsafe attribute "telefone" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 22:30:51 [warning] [application] Failed to set unsafe attribute "id_hotel" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 22:30:51 [warning] [application] Failed to set unsafe attribute "telefone" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 22:30:55 [warning] [application] Failed to set unsafe attribute "id_hotel" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 22:30:55 [warning] [application] Failed to set unsafe attribute "telefone" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:32:22 [warning] [application] Failed to set unsafe attribute "id_hotel" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:32:22 [warning] [application] Failed to set unsafe attribute "telefone" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:32:30 [warning] [application] Failed to set unsafe attribute "id_hotel" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:32:30 [warning] [application] Failed to set unsafe attribute "telefone" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:38:14 [warning] [application] Failed to set unsafe attribute "id_hotel" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:38:14 [warning] [application] Failed to set unsafe attribute "telefone" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:38:40 [warning] [application] Failed to set unsafe attribute "id_hotel" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:38:40 [warning] [application] Failed to set unsafe attribute "telefone" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:39:51 [warning] [application] Failed to set unsafe attribute "id_hotel" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:39:51 [warning] [application] Failed to set unsafe attribute "telefone" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:40:00 [warning] [application] Failed to set unsafe attribute "id_hotel" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:40:00 [warning] [application] Failed to set unsafe attribute "telefone" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:40:05 [warning] [application] Failed to set unsafe attribute "id_hotel" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:40:05 [warning] [application] Failed to set unsafe attribute "telefone" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:40:24 [warning] [application] Failed to set unsafe attribute "id_hotel" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:40:24 [warning] [application] Failed to set unsafe attribute "telefone" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:40:36 [warning] [application] Failed to set unsafe attribute "id_hotel" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:40:36 [warning] [application] Failed to set unsafe attribute "telefone" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:41:05 [warning] [application] Failed to set unsafe attribute "id_hotel" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:41:05 [warning] [application] Failed to set unsafe attribute "telefone" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:42:09 [warning] [application] Failed to set unsafe attribute "id_hotel" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:42:09 [warning] [application] Failed to set unsafe attribute "telefone" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:42:16 [warning] [application] Failed to set unsafe attribute "id_hotel" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:42:16 [warning] [application] Failed to set unsafe attribute "telefone" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:42:27 [warning] [application] Failed to set unsafe attribute "id_hotel" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:42:27 [warning] [application] Failed to set unsafe attribute "telefone" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:42:57 [warning] [application] Failed to set unsafe attribute "id_hotel" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:42:57 [warning] [application] Failed to set unsafe attribute "telefone" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:43:37 [warning] [application] Failed to set unsafe attribute "id_hotel" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:43:37 [warning] [application] Failed to set unsafe attribute "telefone" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:43:45 [warning] [application] Failed to set unsafe attribute "id_hotel" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:43:45 [warning] [application] Failed to set unsafe attribute "telefone" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:43:51 [warning] [application] Failed to set unsafe attribute "id_hotel" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:43:51 [warning] [application] Failed to set unsafe attribute "telefone" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:45:13 [warning] [application] Failed to set unsafe attribute "telefone" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (98)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:45:53 [warning] [application] Failed to set unsafe attribute "id_hotel" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:45:53 [warning] [application] Failed to set unsafe attribute "telefone" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (59)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:45:59 [warning] [application] Failed to set unsafe attribute "telefone" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (98)
+in C:\xampp\htdocs\hs\index.php (13)
+2014/12/28 23:46:49 [warning] [application] Failed to set unsafe attribute "telefone" of "Apartment".
+in C:\xampp\htdocs\hs\protected\controllers\ApartmentController.php (98)
+in C:\xampp\htdocs\hs\index.php (13)

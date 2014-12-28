@@ -57,11 +57,13 @@ class ApartmentController extends Controller
         $is_update = true;
         if (isset($_POST['Apartment'])) {
             $model->attributes = $_POST['Apartment'];
-            $model->telefone = preg_replace("/[^A-Za-z0-9 ]/", '', $model->telefone);
+            $model->id_hotel = $_POST['Apartment']['id_hotel'];
+            $model->telefone = $_POST['Apartment']['telefone'];
             //remove tudo que nao é alfanumerico
+            $model->telefone = preg_replace("/[^A-Za-z0-9 ]/", '', $model->telefone);
+            
             $model->updated_at = date("Y-m-d H:i:s");
             $model->status = "a";
-            
             if($model->validate() && $model->save()){
                 
                 Yii::app()->user->setFlash('success', sprintf('Apartmento %s atualizado com sucesso!',
@@ -94,8 +96,11 @@ class ApartmentController extends Controller
         $is_update = false;
         if (isset($_POST['Apartment'])) {
             $model->attributes = $_POST['Apartment'];
-            $model->telefone = preg_replace("/[^A-Za-z0-9 ]/", '', $model->telefone);
+            $model->id_hotel = $_POST['Apartment']['id_hotel'];
+            $model->telefone = $_POST['Apartment']['telefone'];
             //remove tudo que nao é alfanumerico
+            $model->telefone = preg_replace("/[^A-Za-z0-9 ]/", '', $model->telefone);
+            
             $model->created_at = date("Y-m-d H:i:s");
             $model->status = "a";
             

@@ -31,7 +31,7 @@ class Apartment extends CActiveRecord
             array('id_hotel, bloco, apartamento, cama_casal, cama_solteiro, banheiro, frigobar', 'required', 'on' => 'default'),
             array('bloco, apartamento', 'length', 'max'=>20),
             array('cama_casal, cama_solteiro, banheiro, frigobar', 'numerical', 'integerOnly'=>true),
-            array('id, id_hotel, bloco, apartamento, valor, status, cama_casal, cama_solteiro, banheiro, frigobar, telefone', 'safe', 'on'=>'search'),
+            array('id, id_hotel, bloco, apartamento, valor, status, cama_casal, cama_solteiro, banheiro, frigobar, telefone ', 'safe', 'on'=>'search'),
         );
     }
 
