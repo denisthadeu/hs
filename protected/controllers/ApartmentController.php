@@ -2,7 +2,7 @@
 
 class ApartmentController extends Controller
 {
-    public $hotel_list;
+    public $Apartment_list;
 
     /**
      * Declares class-based actions.
@@ -32,18 +32,18 @@ class ApartmentController extends Controller
     {
         $criteria=new CDbCriteria();
         if(Yii::app()->user->nivel == 2){
-            $criteria->join = ' JOIN hotel ON hotel.id = t.id_hotel ';
-            $criteria->join .= ' JOIN affiliate ON affiliate.id = hotel.id_filial ';
+            $criteria->join = ' JOIN Apartment ON Apartment.id = t.id_Apartment ';
+            $criteria->join .= ' JOIN affiliate ON affiliate.id = Apartment.id_filial ';
             $criteria->condition = ' affiliate.id_empresa = :id_empresa ';
             $criteria->params = array(":id_empresa" => Yii::app()->user->id_empresa);
         }
-        $count=Apartament::model()->count($criteria);
+        $count=Apartment::model()->count($criteria);
         $pages=new CPagination($count);
 
         // results per page
         $pages->pageSize=10;
         $pages->applyLimit($criteria);
-        $models=Hotel::model()->findAll($criteria);
+        $models=Apartment::model()->findAll($criteria);
 
         $this->render('index', array(
             'models' => $models,
@@ -53,35 +53,31 @@ class ApartmentController extends Controller
 
     public function actionUpdate($id)
     {
-        $model = Apartament::model()->findByPk($id);
+        $model = Apartment::model()->findByPk($id);
         $is_update = true;
-        if (isset($_POST['Apartament'])) {
-            $model->attributes = $_POST['Apartament'];
-
+        if (isset($_POST['Apartment'])) {
+            $model->attributes = $_POST['Apartment'];
+            $model->telefone = preg_replace("/[^A-Za-z0-9 ]/", '', $model->telefone);
             //remove tudo que nao é alfanumerico
             $model->updated_at = date("Y-m-d H:i:s");
             $model->status = "a";
             
             if($model->validate() && $model->save()){
                 
-                Yii::app()->user->setFlash('success', sprintf('Apartamento %s atualizado com sucesso!',
-                    $model->nome
+                Yii::app()->user->setFlash('success', sprintf('Apartmento %s atualizado com sucesso!',
+                    $model->apartamento
                 ));
                 
                 $this->redirect(array('index'));
             }
         }
-        $this->$hotel_list = array();
-        if(Yii::app()->user->nivel == 1){
-            $this->$hotel_list =  Affiliate::model()->findAll(array('order'=>'nome'));
-        } else {
-            $this->$hotel_list = Affiliate::model()->findAll(
-            array(
-                'condition' => 'id_empresa = :company AND status = "a")',
-                'params' => array(':company' => Yii::app()->user->id_empresa),
-                'order'=>'nome',
-            ));
+        $criteria=new CDbCriteria();
+        if(Yii::app()->user->nivel == 2){
+            $criteria->join = ' JOIN affiliate ON affiliate.id = t.id_filial ';
+            $criteria->condition = ' affiliate.id_empresa = :id_empresa ';
+            $criteria->params = array(":id_empresa" => Yii::app()->user->id_empresa);
         }
+        $this->Apartment_list =  Hotel::model()->findAll($criteria);
         $this->render('update', array(
             'model' => $model, 'is_update'=>$is_update
         ));
@@ -89,35 +85,37 @@ class ApartmentController extends Controller
     
     public function actionCreate()
     {
-        $model = new Apartament();
+        $model = new Apartment();
         $model->scenario = "default";
+        $model->cama_casal = 0;
+        $model->cama_solteiro = 0;
+        $model->banheiro = 0;
+        $model->frigobar = 0;
         $is_update = false;
-        if (isset($_POST['Apartament'])) {
-            $model->attributes = $_POST['Apartament'];
-            
+        if (isset($_POST['Apartment'])) {
+            $model->attributes = $_POST['Apartment'];
+            $model->telefone = preg_replace("/[^A-Za-z0-9 ]/", '', $model->telefone);
             //remove tudo que nao é alfanumerico
             $model->created_at = date("Y-m-d H:i:s");
             $model->status = "a";
             
             if($model->validate() && $model->save()){
                 
-                Yii::app()->user->setFlash('success', sprintf('Apartamento %s cadastrado com sucesso!',
-                    $model->nome
+                Yii::app()->user->setFlash('success', sprintf('Apartmento %s cadastrado com sucesso!',
+                    $model->apartamento
                 ));
                 
                 $this->redirect(array('index'));
             }
         }
-        if(Yii::app()->user->nivel == 1){
-            $this->hotel_list =  Affiliate::model()->findAll(array('order'=>'nome'));
-        } else {
-            $this->hotel_list = Affiliate::model()->findAll(
-            array(
-                'condition' => 'id_empresa = :company AND status = "a")',
-                'params' => array(':company' => Yii::app()->user->id_empresa),
-                'order'=>'nome',
-            ));
+        $criteria=new CDbCriteria();
+        if(Yii::app()->user->nivel == 2){
+            $criteria->join = ' JOIN affiliate ON affiliate.id = t.id_filial ';
+            $criteria->condition = ' affiliate.id_empresa = :id_empresa ';
+            $criteria->params = array(":id_empresa" => Yii::app()->user->id_empresa);
         }
+        $this->Apartment_list =  Hotel::model()->findAll($criteria);
+
         $this->render('create', array(
             'model' => $model, 'is_update'=>$is_update
         ));
@@ -125,13 +123,13 @@ class ApartmentController extends Controller
     
     public function actionInactive($id)
     {
-        $model = Hotel::model()->findByPk($id);
+        $model = Apartment::model()->findByPk($id);
         $model->status = "i";
         $model->updated_at = date("Y-m-d H:i:s");
         $model->user_inactive = Yii::app()->user->id;
         if($model->validate() && $model->save()){
-            Yii::app()->user->setFlash('success', sprintf('Hotel %s foi inativado com sucesso!',
-                $model->nome
+            Yii::app()->user->setFlash('success', sprintf('Apartamento %s foi inativado com sucesso!',
+                $model->apartamento
             ));
         }
         $this->redirect(array('index'));
@@ -139,13 +137,13 @@ class ApartmentController extends Controller
     
     public function actionActive($id)
     {
-        $model = Hotel::model()->findByPk($id);
+        $model = Apartment::model()->findByPk($id);
         $model->status = "a";
         $model->updated_at = date("Y-m-d H:i:s");
         $model->user_inactive = 0;
         if($model->validate() && $model->save()){
-            Yii::app()->user->setFlash('success', sprintf('Hotel %s foi ativado com sucesso!',
-                $model->nome
+            Yii::app()->user->setFlash('success', sprintf('Apartamento %s foi ativado com sucesso!',
+                $model->apartamento
             ));
         }
         $this->redirect(array('index'));

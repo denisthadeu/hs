@@ -1,6 +1,6 @@
 <?php
  
-class Apartament extends CActiveRecord
+class Apartment extends CActiveRecord
 {
     /**
      * Returns the static model of the specified AR class.
@@ -28,11 +28,10 @@ class Apartament extends CActiveRecord
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('id_hotel, bloco, apartamento', 'required'),
+            array('id_hotel, bloco, apartamento, cama_casal, cama_solteiro, banheiro, frigobar', 'required', 'on' => 'default'),
             array('bloco, apartamento', 'length', 'max'=>20),
-            // The following rule is used by search().
-            // Please remove those attributes that should not be searched.
-            array('id, id_hotel, bloco, apartamento, valor, status', 'safe', 'on'=>'search'),
+            array('cama_casal, cama_solteiro, banheiro, frigobar', 'numerical', 'integerOnly'=>true),
+            array('id, id_hotel, bloco, apartamento, valor, status, cama_casal, cama_solteiro, banheiro, frigobar, telefone', 'safe', 'on'=>'search'),
         );
     }
 
@@ -56,11 +55,16 @@ class Apartament extends CActiveRecord
         return array(
 
             'id' => Yii::t('Apartment', 'apartment.id'),
-            'id_hotel' => Yii::t('Apartment', 'apartment.id_hotel'),
-            'bloco' => Yii::t('Apartment', 'apartment.bloco'),
-            'apartamento' => Yii::t('Apartment', 'apartment.apartamento'),
-            'valor' => Yii::t('Apartment', 'apartment.valor'),
-            'status' => Yii::t('Apartment', 'apartment.status'),
+            'id_hotel' => Yii::t('Apartment', 'Hotel'),
+            'bloco' => Yii::t('Apartment', 'Bloco'),
+            'apartamento' => Yii::t('Apartment', 'Apartamento'),
+            'cama_casal' => Yii::t('Apartment', 'Camas de casal'),
+            'cama_solteiro' => Yii::t('Apartment', 'Camas de solteiro'),
+            'banheiro' => Yii::t('Apartment', 'Banheiro'),
+            'frigobar' => Yii::t('Apartment', 'Frigobar'),
+            'telefone' => Yii::t('Apartment', 'Telefone'),
+            'valor' => Yii::t('Apartment', 'Valor'),
+            'status' => Yii::t('Apartment', 'Status'),
         );
     }
 
@@ -87,6 +91,11 @@ class Apartament extends CActiveRecord
         $criteria->compare('id_hotel',$this->id_hotel,true);
         $criteria->compare('bloco',$this->bloco,true);
         $criteria->compare('apartamento',$this->apartamento,true);
+        $criteria->compare('cama_casal',$this->cama_casal,true);
+        $criteria->compare('cama_solteiro',$this->cama_solteiro,true);
+        $criteria->compare('banheiro',$this->banheiro,true);
+        $criteria->compare('frigobar',$this->frigobar,true);
+        $criteria->compare('telefone',$this->telefone,true);
         $criteria->compare('valor',$this->valor,true);
         $criteria->compare('status',$this->status,true);
 

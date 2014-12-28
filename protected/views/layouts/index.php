@@ -21,13 +21,7 @@
     <link rel="stylesheet" type="text/css" href="js/nivo-slider/nivo-slider.css" >
     <link rel="stylesheet" type="text/css" href="js/lightbox/css/lightbox.css" />
     <link rel="stylesheet" type="text/css" href="css/template.css">   
-    <link rel="stylesheet" type="text/css" href="css/style1.css" />
-    <link rel="alternate stylesheet" type="text/css" media="screen" title="style2" href="css/style2.css" />
-    <link rel="alternate stylesheet" type="text/css" media="screen" title="style3" href="css/style3.css" />
-    <link rel="alternate stylesheet" type="text/css" media="screen" title="style4" href="css/style4.css" />
-    <link rel="alternate stylesheet" type="text/css" media="screen" title="style5" href="css/style5.css" />
-    <link rel="alternate stylesheet" type="text/css" media="screen" title="style6" href="css/style6.css" />
-    
+    <link rel="stylesheet" type="text/css" href="css/style1.css" />    
     
     <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="js/swfobject/swfobject.js"></script>

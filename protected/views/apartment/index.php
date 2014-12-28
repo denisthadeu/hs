@@ -41,7 +41,6 @@ function mask($val, $mask){
 </div>
 <div class="row-fluid">
     <div class="span12 center">
-
         <table class="table table-striped">
               <thead>
                 <tr>
@@ -50,6 +49,9 @@ function mask($val, $mask){
                   <th>Bloco</th>
                   <th>Apartamento</th>
                   <th>Telefone</th>
+                  <th>Cama Casal</th>
+                  <th>Cama Solteiro</th>
+                  <th>Banheiro</th>
                   <th>Status</th>
                 </tr>
               </thead>
@@ -63,21 +65,24 @@ function mask($val, $mask){
                             <div class="btn-group">
                                     <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-wrench icon-white"></i> <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
-                                      <li><a href="<?php echo $this->createUrl('apartament/update',array('id'=>$model->id)); ?>"><i class="icon-pencil"></i>Editar</a></li>
+                                      <li><a href="<?php echo $this->createUrl('apartment/update',array('id'=>$model->id)); ?>"><i class="icon-pencil"></i>Editar</a></li>
                                       <li class="divider"></li>
                                       <?php if($model->status == "a"){ ?>
-                                      <li><a href="<?php echo $this->createUrl('apartament/inactive',array('id'=>$model->id)); ?>"><i class="icon-ban-circle"></i>Inativar</a></li>
+                                      <li><a href="<?php echo $this->createUrl('apartment/inactive',array('id'=>$model->id)); ?>"><i class="icon-ban-circle"></i>Inativar</a></li>
                                       <?php } elseif($model->status == "i") { ?>
-                                      <li><a href="<?php echo $this->createUrl('apartament/active',array('id'=>$model->id)); ?>"><i class="icon-ok-circle"></i>Ativar</a></li>
+                                      <li><a href="<?php echo $this->createUrl('apartment/active',array('id'=>$model->id)); ?>"><i class="icon-ok-circle"></i>Ativar</a></li>
                                       <?php } ?>
                                     </ul>
                                 </div>
                             </div>
                           </td>
                           <td><?php echo $model->hotel->nome; ?></td>
-                          <td><?php echo mask($model->cnpj,'##.###.###/####-##'); ?></td>
-                          <td><?php echo $model->nome_proprietario; ?></td>
+                          <td><?php echo $model->bloco ?></td>
+                          <td><?php echo $model->apartamento; ?></td>
                           <td><?php echo (!empty($model->telefone)) ? mask($model->telefone,'(##) ####-####') : null; ?></td>
+                          <td><?php echo $model->cama_casal; ?></td>
+                          <td><?php echo $model->cama_solteiro; ?></td>
+                          <td><?php echo $model->banheiro; ?></td>
                           <td><?php echo ($model->status == "a") ? "Ativo" : "Inativo"; ?></td>
                         </tr>
                     <?php
