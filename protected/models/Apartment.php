@@ -28,7 +28,7 @@ class Apartment extends CActiveRecord
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('id_hotel, bloco, apartamento, cama_casal, cama_solteiro, banheiro, frigobar', 'required', 'on' => 'default'),
+            array('id_hotel, apartamento, cama_casal, cama_solteiro, banheiro, frigobar', 'required', 'on' => 'default'),
             array('bloco, apartamento', 'length', 'max'=>20),
             array('cama_casal, cama_solteiro, banheiro, frigobar', 'numerical', 'integerOnly'=>true),
             array('id, id_hotel, bloco, apartamento, valor, status, cama_casal, cama_solteiro, banheiro, frigobar, telefone ', 'safe', 'on'=>'search'),

@@ -21,6 +21,8 @@
                         array('label'=>'Fale Conosco', 'url'=>array('/site/contact'), 'visible'=>Yii::app()->user->isGuest,'linkOptions'=>array("data-description"=>"Entre em Contato")),
                         
                         // Login
+                        array('label'=>'Home', 'url'=>array('/site/index'), 'visible'=>!Yii::app()->user->isGuest,'linkOptions'=>array("data-description"=>"Página Inicial")),
+                        array('label'=>'Reservas', 'url'=>array('/reservation/index'), 'visible'=>!Yii::app()->user->isGuest,'linkOptions'=>array("data-description"=>"Hospedagem")),
                         array('label'=>'Controle <span class="caret"></span>', 'url'=>array('/site/page', 'view'=>'columns'), 'visible'=>!Yii::app()->user->isGuest,'itemOptions'=>array('class'=>'dropdown','tabindex'=>"-1"),'linkOptions'=>array('class'=>'dropdown-toggle','data-toggle'=>"dropdown","data-description"=>"Cadastros"), 
                         'items'=>array(
                             array('label'=>'Empresa', 'url'=>array('/company/index', 'view'=>'empresas')),
@@ -28,6 +30,7 @@
                             array('label'=>'Hotel', 'url'=>array('/hotel/index', 'view'=>'hoteis')),
                             array('label'=>'Apartamento', 'url'=>array('/apartment/index', 'view'=>'apartamentos')),
                         )),
+                        array('label'=>'Usuários', 'url'=>array('/user/index'), 'visible'=>!Yii::app()->user->isGuest,'linkOptions'=>array("data-description"=>"Permissão de acesso")),
                         
                         //Login and logout
                         array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest,'linkOptions'=>array("data-description"=>"Acesso público")),
